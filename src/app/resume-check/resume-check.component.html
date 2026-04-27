@@ -1,22 +1,32 @@
-<div class="page-center">
-  <div class="upload-card">
-
+<div class="container">
+  <div class="card">
+    
     <h2>Resume Analyzer</h2>
-    <p class="subtitle">Upload your resume and get your score</p>
+    <p class="subtitle">Upload your resume to get insights</p>
 
-    <div class="upload-box" (click)="fileInput.click()">
-      <input #fileInput type="file" (change)="onFileSelected($event)" accept=".pdf,.doc,.docx">
+    <label class="upload-box">
+      <input type="file" (change)="onFileSelected($event)" hidden>
+      <span>📄 Choose Resume</span>
+    </label>
 
-      <div class="upload-content">
-        <div class="icon">📄</div>
-        <p class="main-text">Click to upload</p>
-        <p class="sub-text">PDF, DOC, DOCX (Max 5MB)</p>
-      </div>
+    <button (click)="upload()">Analyze Resume</button>
 
-      <p class="file-name" *ngIf="fileName">{{ fileName }}</p>
+    <p class="result">{{ message }}</p>
+    <br>
+
+    <!-- ✅ SINGLE RESULT BLOCK -->
+   <p><strong>{{ message }}</strong></p>
+
+<p><strong>Score:</strong> {{ score }}/100</p>
+
+<p><strong>Feedback:</strong></p>
+<p>{{ feedback }}</p>
+
+<p><strong>Skills Found:</strong></p>
+<ul>
+  <li *ngFor="let skill of skills">{{ skill }}</li>
+</ul>
+      <button (click)="downloadReport()">Download Report</button>
     </div>
 
-    <button (click)="uploadFile()">Upload Resume</button>
-
   </div>
-</div>
