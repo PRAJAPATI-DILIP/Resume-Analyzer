@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
- private apiUrl = "https://resume-analyzer.onrender.com/api/";
+ private apiUrl = "https://resume-analyzer.onrender.com/api/analyze/";
 
   constructor(private http: HttpClient) {}
 
