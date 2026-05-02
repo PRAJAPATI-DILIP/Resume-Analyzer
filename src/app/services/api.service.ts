@@ -6,8 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
+  
   //private apiUrl = ' http://127.0.0.1:8000'; // Update with your backend URL
-private apiUrl = 'http://127.0.0.1:8000/api/analyze/';
+
+private apiUrl = 'https://backend-of-resume-analyzer.onrender.com/api/analyze/';
   constructor(private http: HttpClient) {}
 
   uploadFile(data: FormData) {
