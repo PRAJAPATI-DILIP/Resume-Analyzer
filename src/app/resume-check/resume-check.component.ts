@@ -54,7 +54,7 @@ export class ResumeCheckComponent {
         this.isLoading = false;
       },
       error: (err) => {
-        console.error(err);
+        //console.error(err);
         alert("Upload failed. Try again.");
         this.isLoading = false;
       }
